@@ -2,7 +2,7 @@
   "name": "elemrntui-vue-webpack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js1",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
