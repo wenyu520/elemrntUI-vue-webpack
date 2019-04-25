@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "SET NODE_ENV=production && webpack --config build/webpack.prod.config.js --mode production",
+    "dev": "SET NODE_ENV=development && webpack-dev-server --open --config build/webpack.dev.config.js --mode development",
+    "dll": "webpack --config build/webpack.dll.config.js --mode production",
+    "start": "npm run dll && npm run dev",
+    "pack": "node utils/pack.js",
+    "prod": "npm run dll && npm run build && npm run pack"
   },
   "repository": {
     "type": "git",
@@ -15,5 +20,34 @@
   "bugs": {
     "url": "https://github.com/wenyu520/elemrntUI-vue-webpack/issues"
   },
-  "homepage": "https://github.com/wenyu520/elemrntUI-vue-webpack#readme"
+  "homepage": "https://github.com/wenyu520/elemrntUI-vue-webpack#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.1",
+    "copy-webpack-plugin": "^5.0.3",
+    "css-hot-loader": "^1.4.4",
+    "css-loader": "^2.1.1",
+    "happypack": "^5.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "os": "^0.1.1",
+    "postcss-loader": "^3.0.0",
+    "purify-css": "^1.2.5",
+    "purifycss-webpack": "^0.7.0",
+    "sass-loader": "^7.1.0",
+    "url-loader": "^1.1.2",
+    "vue-loader": "^15.7.0",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.3.1",
+    "webpack-merge": "^4.2.1",
+    "webpack-parallel-uglify-plugin": "^1.1.0"
+  },
+  "dependencies": {
+    "jquery": "^3.4.0"
+  }
 }
